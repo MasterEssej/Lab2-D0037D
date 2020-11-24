@@ -3,10 +3,8 @@ using namespace std;
 
 bool is_palindrome(char arr[]) {
 
-	int length = strlen(arr);
-
-	for (int i = 0; i < length; i++) {
-		if (arr[i] != arr[length - i - 1]) {
+	for (int i = 0; i < strlen(arr); i++) {
+		if (arr[i] != arr[strlen(arr) - (i + 1)]) {
 			return false;
 		}
 	}
@@ -23,6 +21,7 @@ int main() {
 
 	cin >> array1;
 
-	cout << "Palindrome: " << boolalpha << is_palindrome(array1);
+	cout << "Palindrome: " << boolalpha << is_palindrome(array1) << endl;
 
+	return 0;
 }
