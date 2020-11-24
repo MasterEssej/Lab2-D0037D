@@ -34,6 +34,7 @@ void swap_sort(int a, int b, int c, bool order) {
 	for (int i = 0; i < n; i++) {
 		cout << array1[i] << "\t";
 	}
+	cout << endl;
 }
 
 
@@ -43,19 +44,33 @@ int main() {
 
 	bool order;
 
-	cout << "Give a: ";
-	cin >> a;
+	while (true) {
 
-	cout << "Give b: ";
-	cin >> b;
+		cout << "Give a (0 to quit): ";
+		cin >> a;
 
-	cout << "Give c: ";
-	cin >> c;
+		if (a == 0) {
+			break;
+		}
 
-	cout << "Sort ascending/descending (1/0): ";
-	cin >> order;
+		cout << "Give b: ";
+		cin >> b;
 
-	swap_sort(a, b, c, order);
+		cout << "Give c: ";
+		cin >> c;
+
+		cout << "Sort ascending/descending (1/0): ";
+		cin >> order;
+
+		cout << endl;
+
+		swap_sort(a, b, c, order);
+
+		cout << endl;
+		system("pause");
+		system("cls");
+
+	}
 
 	return 0;
 }
