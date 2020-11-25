@@ -22,6 +22,7 @@ int main() {
 
 	int arrSize = sizeof(arr) / sizeof(arr[0]);
 
+	cout << "Input array:\t";
 	for (int i = 0; i < arrSize; i++) {
 		cout << arr[i] << "\t";
 	}
@@ -30,14 +31,12 @@ int main() {
 
 	shrink_array(arr, arrSize);
 
+	cout << "Output array:\t";
 	for (int i = 0; i < arrSize; i++) {
 		cout << arr[i] << "\t";
 	}
 
 	cout << endl;
-	cout << sizeof(arr) << endl;
-	cout << sizeof(arr[0]) << endl;
-	cout << sizeof(arrSize) << endl;
 
 	return 0;
 }
