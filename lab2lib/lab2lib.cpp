@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
+#include <ctime>
 using namespace std;
 
 #pragma region Task 1
@@ -37,7 +38,9 @@ bool is_palindrome(char arr[]) {
 
 #pragma region Task 3
 
-void array_rows_cols(int arr[20][20]) {
+void array_rows_cols(int arr[20][20], int x, int y) {
+
+	int totsum = 0;
 
 	for (int row = 0; row < x; row++) {
 		int sumx = 0;
@@ -46,6 +49,7 @@ void array_rows_cols(int arr[20][20]) {
 			sumx += arr[row][col];
 		}
 		cout << "|" << sumx << endl;
+		totsum += sumx;
 	}
 	for (int col = 0; col < y; col++) {
 		cout << "---";
@@ -58,7 +62,12 @@ void array_rows_cols(int arr[20][20]) {
 			sumy += arr[row][col];
 		}
 		cout << " " << sumy;
+		totsum += sumy;
 	}
+
+	cout << " " << totsum;
+
+	cout << "\n" << endl;
 
 }
 

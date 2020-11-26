@@ -1,10 +1,11 @@
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 using namespace std;
 
-int x, y;
+void array_rows_cols(int arr[20][20], int x, int y) {
 
-void array_rows_cols(int arr[20][20]) {
+	int totsum = 0;
 
 	for (int row = 0; row < x; row++) {
 		int sumx = 0;
@@ -13,6 +14,7 @@ void array_rows_cols(int arr[20][20]) {
 			sumx += arr[row][col];
 		}
 		cout << "|" << sumx << endl;
+		totsum += sumx;
 	}
 	for (int col = 0; col < y; col++) {
 		cout << "---";
@@ -25,13 +27,22 @@ void array_rows_cols(int arr[20][20]) {
 			sumy += arr[row][col];
 		}
 		cout << " " << sumy;
+		totsum += sumy;
 	}
+
+	cout << " " << totsum;
+
+	cout << "\n" << endl;
 
 }
 
 
 
 int main() {
+
+	srand(time(NULL));
+
+	int x, y;
 
 	int array1[20][20];
 
@@ -47,7 +58,9 @@ int main() {
 		}
 	}
 
-	array_rows_cols(array1);
+	array_rows_cols(array1, x, y);
+
+	system("pause");
 
 	return 0;
 }

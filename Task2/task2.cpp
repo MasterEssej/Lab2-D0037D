@@ -23,5 +23,7 @@ int main() {
 
 	cout << "Palindrome: " << boolalpha << is_palindrome(array1) << endl;
 
+	system("pause");
+
 	return 0;
 }
